@@ -1,0 +1,2 @@
+<img src="<?php echo e(asset('storage/logo/Desain tanpa judul (1).png')); ?>" alt="PlotList" class="h-16 w-auto">
+<?php /**PATH D:\laragon\www\Plot_List\resources\views/components/application-logo.blade.php ENDPATH**/ ?>

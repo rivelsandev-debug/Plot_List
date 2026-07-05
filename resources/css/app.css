@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for Themes */
+:root {
+    --bg-primary: #090d16;       /* Blue-black base */
+    --bg-surface: #0f172a;       /* Dark slate card/surface */
+    --bg-header: #0f172a;        /* Navbar background */
+    --border-color: #1e293b;     /* Slate border */
+    --text-primary: #f8fafc;     /* White text */
+    --text-secondary: #cbd5e1;   /* Muted slate text */
+    --text-muted: #64748b;       /* Dark slate text */
+    --bg-hover: #1e293b;         /* Row hover */
+    --bg-input: #1e293b;         /* Input field */
+    --text-input: #f8fafc;
+    --bg-table-header: #1e293b;
+    --text-table-header: #94a3b8;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+    --bg-hero: linear-gradient(135deg, #0c1a3a 0%, #0f172a 60%, #090d16 100%); /* Deep blue-black */
+}
+
+.theme-light {
+    --bg-primary: #f8fafc;       /* Light gray base */
+    --bg-surface: #ffffff;       /* Pure white card */
+    --bg-header: #ffffff;        /* Pure white navbar */
+    --border-color: #e2e8f0;     /* Light border */
+    --text-primary: #0f172a;     /* Dark text */
+    --text-secondary: #475569;   /* Slate text */
+    --text-muted: #94a3b8;       /* Muted text */
+    --bg-hover: #f8fafc;         /* Light hover */
+    --bg-input: #ffffff;         /* White input */
+    --text-input: #0f172a;
+    --bg-table-header: #f1f5f9;
+    --text-table-header: #475569;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --bg-hero: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #f8fafc 100%); /* Blue-100 to light base */
+}
+
+/* Custom Design Tokens Mapping */
+.theme-app {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-card {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-text-primary {
+    color: var(--text-primary) !important;
+}
+
+.theme-text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.theme-text-muted {
+    color: var(--text-muted) !important;
+}
+
+.theme-border {
+    border-color: var(--border-color) !important;
+}
+
+.theme-header {
+    background-color: var(--bg-header) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-table-header {
+    background-color: var(--bg-table-header) !important;
+    color: var(--text-table-header) !important;
+    border-color: var(--border-color) !important;
+}
+
+.theme-table-row {
+    border-color: var(--border-color) !important;
+    transition: background-color 0.2s ease;
+}
+
+.theme-table-row:hover {
+    background-color: var(--bg-hover) !important;
+}
+
+.theme-input {
+    background-color: var(--bg-input) !important;
+    color: var(--text-input) !important;
+    border-color: var(--border-color) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Select option dropdown theme */
+.theme-input option,
+.theme-app select option {
+    background-color: var(--bg-input);
+    color: var(--text-input);
+}
+
+/* File input cursor */
+.theme-input[type="file"] {
+    cursor: pointer;
+}
+
+
+/* Light Theme Navigation Override */
+.theme-light nav .text-white {
+    color: #0f172a !important;
+}
+
+.theme-light nav .text-gray-300 {
+    color: #475569 !important;
+}
+
+.theme-light nav .text-gray-300:hover {
+    color: #0f172a !important;
+}
+
+.theme-light nav button {
+    color: #475569 !important;
+}
+
+.theme-light nav button:hover {
+    color: #0f172a !important;
+}
+
+.theme-light nav .border-indigo-400 {
+    border-color: #4f46e5 !important;
+}
+
+.theme-hero {
+    background: var(--bg-hero) !important;
+    transition: background 0.3s ease;
+}
+
+/* Global Form Elements Theme Overrides */
+.theme-app label,
+.theme-light label {
+    color: var(--text-secondary) !important;
+}
+
+.theme-app input[type="text"],
+.theme-app input[type="email"],
+.theme-app input[type="password"],
+.theme-app input[type="number"],
+.theme-app input[type="date"],
+.theme-app textarea,
+.theme-app select {
+    background-color: var(--bg-input) !important;
+    color: var(--text-input) !important;
+    border-color: var(--border-color) !important;
+}
+
+.theme-app input[type="text"]:focus,
+.theme-app input[type="email"]:focus,
+.theme-app input[type="password"]:focus,
+.theme-app input[type="number"]:focus,
+.theme-app input[type="date"]:focus,
+.theme-app textarea:focus,
+.theme-app select:focus {
+    border-color: #2563eb !important;
+    --tw-ring-color: #2563eb !important;
+}
+
+/* Guest pages input overrides */
+.theme-app input.block,
+.theme-app input#email,
+.theme-app input#password,
+.theme-app input#name,
+.theme-app input#password_confirmation {
+    background-color: var(--bg-input) !important;
+    color: var(--text-input) !important;
+    border: 1px solid var(--border-color) !important;
+    outline: none !important;
+}
+
+.theme-light input.block,
+.theme-light input#email,
+.theme-light input#password,
+.theme-light input#name,
+.theme-light input#password_confirmation {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    outline: none !important;
+}
+
+/* Dropdown link hover */
+.theme-app a.block:hover,
+.theme-card a.block:hover {
+    background-color: var(--bg-hover) !important;
+}
