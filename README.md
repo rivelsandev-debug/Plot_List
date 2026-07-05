@@ -1,3 +1,97 @@
+# Plot_List
+
+Aplikasi penjualan dan manajemen novel berbasis **Laravel 11**, **Laravel Breeze**, dan **Tailwind CSS**.
+
+## Fitur
+
+- Login dan Register
+- Role Admin dan User
+- Manajemen Novel
+- Manajemen Genre/Kategori
+- Keranjang Belanja
+- Transaksi Pembelian
+
+## Cara Menjalankan Project
+
+### 1. Clone repository
+
+```bash
+git clone https://github.com/rivelsandev-debug/Plot_List.git
+```
+
+### 2. Masuk ke folder project
+
+```bash
+cd Plot_List
+```
+
+### 3. Install dependency
+
+```bash
+composer install
+npm install
+```
+
+### 4. Buat file `.env`
+
+Windows (PowerShell):
+
+```powershell
+copy .env.example .env
+```
+
+Linux/Mac:
+
+```bash
+cp .env.example .env
+```
+
+### 5. Atur database pada file `.env`
+
+```env
+DB_DATABASE=plot_list
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 6. Generate application key
+
+```bash
+php artisan key:generate
+```
+
+### 7. Jalankan migration dan seeder
+
+```bash
+php artisan migrate --seed
+```
+
+### 8. Build asset frontend
+
+```bash
+npm run build
+```
+
+Atau untuk development:
+
+```bash
+npm run dev
+```
+
+### 9. Jalankan aplikasi
+
+```bash
+php artisan serve
+```
+
+Buka:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
